@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students & Results - Jamia Ul Uloom</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="students">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="announcement-text">
+                📢 Admissions Open for 2025-26 Session | Annual Sports Day: May 15, 2025 | Parent-Teacher Meeting: April 30, 2025
+            </div>
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-mosque fa-lg"></i>
+                <div>
+                    Jamia Ul Uloom
+                    <span class="brand-subtitle">Islamic Educational Institution</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="daily-content.html">Daily Content</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="students.html">Students & Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="attendance.html">Attendance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="schedule.html">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section section-bg-primary text-center" style="padding: 60px 0;">
+        <div class="container">
+            <div class="hero-arabic mb-3">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <h1 class="text-white">Students & Results</h1>
+            <p class="text-white-50">Academic excellence and student achievements</p>
+            <nav aria-label="breadcrumb" class="mt-3">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Students & Results</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="section section-bg-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="bismillah">بِسْمِ اللَّهِ</div>
+                <h2>Search Student Results</h2>
+                <p class="text-muted">Find student records and examination results</p>
+            </div>
+            
+            <!-- Search Box -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="search-box">
+                                <input type="text" id="student-search" class="form-control form-control-lg" placeholder="Search by Name, Roll No, or Class...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="d-flex gap-2 mt-3 justify-content-center">
+                                <button class="btn btn-outline-primary" onclick="filterByClass('all')">
+                                    <i class="fas fa-list"></i> All Classes
+                                </button>
+                                <button class="btn btn-outline-primary" onclick="filterByClass('Year 1')">
+                                    Year 1
+                                </button>
+                                <button class="btn btn-outline-primary" onclick="filterByClass('Year 2')">
+                                    Year 2
+                                </button>
+                                <button class="btn btn-outline-primary" onclick="filterByClass('Year 3')">
+                                    Year 3
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Roll No</th>
+                                    <th>Student Name</th>
+                                    <th>Father's Name</th>
+                                    <th>Class</th>
+                                    <th>Marks</th>
+                                    <th>Grade</th>
+                                    <th>Position</th>
+                                    <th>Attendance</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="students-tbody">
+                                <!-- Dynamic content loaded via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="text-center py-5 d-none">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4>No students found</h4>
+                <p class="text-muted">Try adjusting your search criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Performers Section -->
+    <section class="section section-bg-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="bismillah">بِسْمِ اللَّهِ</div>
+                <h2>Top Performers</h2>
+                <p class="text-muted">Celebrating academic excellence</p>
+            </div>
+            
+            <div class="row">
+                <!-- First Position -->
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow h-100 text-center" style="border-top: 5px solid #FFD700;">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-trophy fa-3x" style="color: #FFD700;"></i>
+                            </div>
+                            <h5 class="text-muted mb-2">First Position</h5>
+                            <h3>Abdullah Ahmed</h3>
+                            <p class="text-primary mb-1">Dars-e-Nizami Year 3</p>
+                            <div class="d-flex justify-content-center gap-3 my-3">
+                                <div>
+                                    <h4 class="mb-0">485/500</h4>
+                                    <small class="text-muted">Marks</small>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">A+</h4>
+                                    <small class="text-muted">Grade</small>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">97%</h4>
+                                    <small class="text-muted">Attendance</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm" onclick="StudentsPage.viewResult('JU-2025-001')">
+                                <i class="fas fa-download me-1"></i> Download Result
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Position -->
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow h-100 text-center" style="border-top: 5px solid #C0C0C0;">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-medal fa-3x" style="color: #C0C0C0;"></i>
+                            </div>
+                            <h5 class="text-muted mb-2">Second Position</h5>
+                            <h3>Muhammad Ali</h3>
+                            <p class="text-primary mb-1">Dars-e-Nizami Year 3</p>
+                            <div class="d-flex justify-content-center gap-3 my-3">
+                                <div>
+                                    <h4 class="mb-0">465/500</h4>
+                                    <small class="text-muted">Marks</small>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">A</h4>
+                                    <small class="text-muted">Grade</small>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">95%</h4>
+                                    <small class="text-muted">Attendance</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm" onclick="StudentsPage.viewResult('JU-2025-002')">
+                                <i class="fas fa-download me-1"></i> Download Result
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Position -->
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow h-100 text-center" style="border-top: 5px solid #CD7F32;">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="fas fa-award fa-3x" style="color: #CD7F32;"></i>
+                            </div>
+                            <h5 class="text-muted mb-2">Third Position</h5>
+                            <h3>Abdul Rahman</h3>
+                            <p class="text-primary mb-1">Dars-e-Nizami Year 2</p>
+                            <div class="d-flex justify-content-center gap-3 my-3">
+                                <div>
+                                    <h4 class="mb-0">445/500</h4>
+                                    <small class="text-muted">Marks</small>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">A</h4>
+                                    <small class="text-muted">Grade</small>
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">92%</h4>
+                                    <small class="text-muted">Attendance</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm" onclick="StudentsPage.viewResult('JU-2025-003')">
+                                <i class="fas fa-download me-1"></i> Download Result
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Statistics -->
+    <section class="section section-bg-light">
+        <div class="container">
+            <div class="section-header">
+                <div class="bismillah">بِسْمِ اللَّهِ</div>
+                <h2>Exam Statistics</h2>
+                <p class="text-muted">Annual examination 2024-25</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <h2 class="text-primary mb-0">95%</h2>
+                            <p class="text-muted mb-0">Pass Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <h2 class="text-success mb-0">45</h2>
+                            <p class="text-muted mb-0">A+ Grades</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <h2 class="text-warning mb-0">120</h2>
+                            <p class="text-muted mb-0">A Grades</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <h2 class="text-info mb-0">85%</h2>
+                            <p class="text-muted mb-0">Avg Attendance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-bg-primary text-center">
+        <div class="container">
+            <h2 class="text-white mb-4">Check Your Result</h2>
+            <p class="lead text-white-50 mb-4">Enter your roll number to view and download your result card</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="tel:+922112345678" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone"></i> Contact Office
+                </a>
+                <a href="attendance.html" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-chart-line"></i> View Attendance
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4><i class="fas fa-mosque me-2"></i> Jamia Ul Uloom</h4>
+                    <p class="text-white-50">A premier Islamic educational institution dedicated to nurturing young minds with comprehensive Islamic knowledge since 1995.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="daily-content.html">Daily Content</a>
+                    <a href="students.html">Students</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4>Programs</h4>
+                    <a href="#">Dars-e-Nizami</a>
+                    <a href="#">Hifz-ul-Quran</a>
+                    <a href="#">Tajweed</a>
+                    <a href="#">Arabic Language</a>
+                    <a href="#">Islamic Studies</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4>Contact Info</h4>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        123 Islamic Education Street, Karachi, Pakistan
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-phone me-2"></i>
+                        +92-21-12345678
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-envelope me-2"></i>
+                        info@jamiaululoom.edu.pk
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0 text-white-50">&copy; 2025 Jamia Ul Uloom. All Rights Reserved. | Developed with <i class="fas fa-heart text-danger"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Additional filter by class function
+        function filterByClass(className) {
+            const searchInput = document.getElementById('student-search');
+            if (className === 'all') {
+                searchInput.value = '';
+                StudentsPage.renderStudentsTable(AppData.students);
+            } else {
+                const filtered = AppData.students.filter(s => s.class.includes(className));
+                StudentsPage.renderStudentsTable(filtered);
+            }
+        }
+    </script>
+</body>
+</html>
