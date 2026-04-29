@@ -13,12 +13,12 @@ const AppData = {
     madrasa: {
         name: "Jamia Ul Uloom",
         tagline: "Islamic Educational Institution",
-        established: 1995,
-        registration: "REG-12345-EDU-1995",
-        address: "123 Islamic Education Street, Karachi, Pakistan",
-        phone: "+92-21-12345678",
+        established: 2015,
+        registration: "REG-12345-EDU-PAK",
+        address: "Gurgur, Karak, Pakistan",
+        phone: "+92-349-9088073",
         email: "info@jamiaululoom.edu.pk",
-        whatsapp: "923001234567"
+        whatsapp: "923499088073"
     },
 
     // Daily Hadith/Ayat/Aqwal Collection
@@ -68,21 +68,21 @@ const AppData = {
         {
             id: 1,
             title: "Annual Examination Results Announced",
-            date: "2025-04-15",
+            date: "2026-04-15",
             summary: "The annual examination results have been declared with 95% pass rate.",
             category: "announcement"
         },
         {
             id: 2,
             title: "New Library Building Inaugurated",
-            date: "2025-04-10",
+            date: "2026-04-10",
             summary: "A state-of-the-art library building has been inaugurated by the chief guest.",
             category: "event"
         },
         {
             id: 3,
-            title: "Admissions Open for 2025-26 Session",
-            date: "2025-04-05",
+            title: "Admissions Open for 2026-27 Session",
+            date: "2026-04-05",
             summary: "Admissions are now open for all classes. Apply before May 31st.",
             category: "admission"
         }
@@ -90,8 +90,8 @@ const AppData = {
 
     // Announcements
     announcements: [
-        "📢 Annual Sports Day scheduled for May 15, 2025",
-        "📢 Parent-Teacher meeting on April 30, 2025",
+        "📢 Annual Sports Day scheduled for May 15, 2026",
+        "📢 Parent-Teacher meeting on April 30, 2026",
         "📢 Eid Milad-un-Nabi celebration next Friday"
     ],
 
@@ -102,32 +102,32 @@ const AppData = {
             name: "Mufti Abdul Rahman",
             position: "Principal",
             qualification: "PhD in Islamic Studies",
-            experience: "25 years",
-            image: "https://via.placeholder.com/300x300/1a5f48/ffffff?text=AR"
+            experience: "8 years",
+            image: "img/m1.jpg"
         },
         {
             id: 2,
             name: "Qari Muhammad Ibrahim",
             position: "Head of Tajweed",
             qualification: "Ijazah in Qira'at",
-            experience: "20 years",
-            image: "https://via.placeholder.com/300x300/1a5f48/ffffff?text=MI"
+            experience: "6 years",
+            image: "img/m1.jpg"
         },
         {
             id: 3,
             name: "Maulana Fazlur Rahman",
             position: "Hadith Professor",
             qualification: "Alimiyat + Fazilat",
-            experience: "18 years",
-            image: "https://via.placeholder.com/300x300/1a5f48/ffffff?text=FR"
+            experience: "5 years",
+            image: "img/m1.jpg"
         },
         {
             id: 4,
             name: "Hafiz Muhammad Yusuf",
             position: "Quran Memorization",
             qualification: "Hafiz-e-Quran",
-            experience: "15 years",
-            image: "https://via.placeholder.com/300x300/1a5f48/ffffff?text=MY"
+            experience: "2 years",
+            image: "img/m1.jpg"
         }
     ],
 
@@ -238,26 +238,26 @@ const AppData = {
 
     // Gallery Items
     gallery: [
-        { id: 1, category: "Events", title: "Annual Prize Distribution", image: "https://via.placeholder.com/600x400/1a5f48/ffffff?text=Prize+Distribution" },
-        { id: 2, category: "Classes", title: "Quran Class Session", image: "https://via.placeholder.com/600x400/1a5f48/ffffff?text=Quran+Class" },
-        { id: 3, category: "Functions", title: "Eid Celebration", image: "https://via.placeholder.com/600x400/c9a227/ffffff?text=Eid+Celebration" },
-        { id: 4, category: "Sports", title: "Cricket Tournament", image: "https://via.placeholder.com/600x400/1a5f48/ffffff?text=Cricket" },
-        { id: 5, category: "Events", title: "Islamic Quiz Competition", image: "https://via.placeholder.com/600x400/c9a227/ffffff?text=Quiz+Competition" },
-        { id: 6, category: "Visits", title: "Educational Trip", image: "https://via.placeholder.com/600x400/1a5f48/ffffff?text=Educational+Trip" },
-        { id: 7, category: "Classes", title: "Arabic Calligraphy Workshop", image: "https://via.placeholder.com/600x400/c9a227/ffffff?text=Calligraphy" },
-        { id: 8, category: "Functions", title: "Graduation Ceremony", image: "https://via.placeholder.com/600x400/1a5f48/ffffff?text=Graduation" }
+        { id: 1, category: "Events", title: "Annual Prize Distribution", image: "img/p1.jpg" },
+        { id: 2, category: "Classes", title: "Quran Class Session", image: "img/p2.jpg" },
+        { id: 3, category: "Functions", title: "Eid Celebration", image: "img/p3.jpg" },
+        { id: 4, category: "Sports", title: "Cricket Tournament", image: "img/p4.jpg" },
+        { id: 5, category: "Events", title: "Islamic Quiz Competition", image: "img/p5.jpg" },
+        { id: 6, category: "Visits", title: "Educational Trip", image: "img/p6.jpg" },
+        { id: 7, category: "Classes", title: "Arabic Calligraphy Workshop", image: "img/p7.jpg" },
+        { id: 8, category: "Functions", title: "Graduation Ceremony", image: "img/p8.jpg" }
     ],
 
     // Timeline Events
     timeline: [
-        { year: "1995", title: "Foundation Laid", description: "Jamia Ul Uloom was established with just 20 students and 3 teachers." },
-        { year: "1998", title: "First Batch Graduated", description: "The first batch of 15 students successfully completed their education." },
-        { year: "2002", title: "Government Registration", description: "Received official government registration and recognition." },
-        { year: "2005", title: "New Building Constructed", description: "A new three-story building was constructed to accommodate growing student numbers." },
-        { year: "2010", title: "Library Established", description: "A comprehensive library with over 5000 books was established." },
-        { year: "2015", title: "Digital Initiative", description: "Launched digital learning programs and computer labs." },
-        { year: "2020", title: "Online Classes", description: "Successfully transitioned to online education during the pandemic." },
-        { year: "2025", title: "30 Years of Excellence", description: "Celebrating three decades of Islamic education with over 1200 graduates." }
+        { year: "2015", title: "Foundation Laid", description: "Jamia Ul Uloom was established with just 20 students and 3 teachers." },
+        { year: "2016", title: "First Batch Graduated", description: "The first batch of 15 students successfully completed their education." },
+        { year: "2017", title: "Government Registration", description: "Received official government registration and recognition." },
+        { year: "2018", title: "New Building Constructed", description: "A new three-story building was constructed to accommodate growing student numbers." },
+        { year: "2019", title: "Library Established", description: "A comprehensive library with over 5000 books was established." },
+        { year: "2020", title: "Digital Initiative", description: "Launched digital learning programs and computer labs." },
+        { year: "2021", title: "Online Classes", description: "Successfully transitioned to online education during the pandemic." },
+        { year: "2022", title: "30 Years of Excellence", description: "Celebrating three decades of Islamic education with over 1200 graduates." }
     ]
 };
 
